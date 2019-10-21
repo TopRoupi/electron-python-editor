@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./photon/css/photon.css">
+    <style type="text/css">
+      #editor {
+          height: 500px;
+          width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="window">
+      <header class="toolbar toolbar-header">
+        <div class="toolbar-actions">
+          <div class="btn-group pull-right">
+            <button id="btnMin" class="btn btn-default">
+              <span class="icon icon-minus"></span>
+            </button>
+            <button id="btnMax" class="btn btn-default">
+              <span class="icon icon-plus"></span>
+            </button>
+            <button id="btnKill" class="btn btn-default btn-negative active">
+              <span class="icon icon-cancel-circled"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <div class="window-content" style="display: block; margin-top: 10px;">
+        <div class="row" style="margin-right: 0px; margin-left: 0px;">
+          <div class="col-7">
+            <div id="editor">print("hello world")</div>
+            <br>
+            <button onclick="RunNonCS()" type="button" class="btn btn-mini btn-primary">Run</button>
+            <button class="btn btn-mini btn-warning">Submit</button>
+          </div>
+          <div class="col-5">
+            <pre id="Link" class="resultarea"></pre>
+            <div id="Warning"></div>
+            <div id="Error"></div>
+            <pre id="Result" class="resultarea"></pre>
+          </div>
+        </div>
+      </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./photon/js/editor.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      require('./renderer.js')
+    </script>
+  </body>
+</html>
